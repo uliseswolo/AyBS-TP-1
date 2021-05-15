@@ -5,13 +5,16 @@
 #include <cstdlib>
 #include <stdio.h>
 #include <stdlib.h>
+#include <wchar.h>
+#include <locale.h>
 
 using namespace std;
 
 int main()
 {
+    setlocale(LC_CTYPE, "Spanish");
 
-    float m1, m2, b1, b2, intersection_X, intersection_Y;
+    float m1, m2, b1, b2, inter_X, inter_Y;
 
     cout << "Formato de las rectas: y=m*x+b" << endl;
 
@@ -38,11 +41,11 @@ int main()
         }
         else
         {
-            intersection_X = (b2 - b1) / (m1 - m2);
-            intersection_Y = m1 * intersection_X + b1;
+            inter_X = (b2 - b1) / (m1 - m2);
+            inter_Y = m1 * inter_X + b1;
 
-            cout << "\nPunto de intersección en X = " << intersection_X << endl;
-            cout << "\nPunto de intersección en Y = " << intersection_Y << endl;
+            cout << "\nPunto de intersección en X = " << inter_X << endl;
+            cout << "\nPunto de intersección en Y = " << inter_Y << endl;
         }
     }
     system("\npause");
